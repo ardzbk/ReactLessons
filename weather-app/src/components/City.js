@@ -1,23 +1,22 @@
 import React from 'react'
 
 const City = ({city}) => {
-    console.log(city)
   return (
     <div>
 
-        <div class="card text-center mt-3">
-            <div class="card-header">
-                <h1>{city.name}
-            </h1>
-            </div>
-            <div class="card-body">
-                <h1>{city.main.temp}</h1>
-                <h1>{city.weather[0].main}</h1>
-            </div>
-            <div class="card-footer text-body-secondary">
-                <h1>{city.weather[0].description}</h1>
-            </div>
-            </div>
+      {city && (
+        <ul class="list-group mt-3 w-50 mx-auto">
+          <li class="list-group-item">Temperature: {city.main.temp}°C</li>
+          <li class="list-group-item">Description: {city.weather[0].description}</li>
+          <li class="list-group-item">Humidity: {city.main.humidity}%</li>
+          <li class="list-group-item">Wind: {city.wind.speed}km/h</li>
+          <li class="list-group-item">
+            <img
+              src={`http://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png`}
+              alt=""></img>
+          </li>
+        </ul>
+      )}
     </div>
   )
 }

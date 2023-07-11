@@ -25,9 +25,10 @@ function Weather() {
 
   return (
     <div className='p-3 w-50 mx-auto'> 
+  
     <form >
         <h1 className='display-6 pb-2'>Hava Durumu</h1>
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 w-50 mx-auto">
                 <input type="text" className="form-control" id="input" onChange={(event)=>setSearch(event.target.value)}/>
                 <label htmlFor="floatingInput" >Şehir Giriniz</label>
 
